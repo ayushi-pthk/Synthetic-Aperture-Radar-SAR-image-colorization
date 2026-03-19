@@ -6,7 +6,7 @@ try:
 except ImportError:
     subprocess.check_call([
         sys.executable, "-m", "pip", "install",
-        "torch==2.1.0+cpu",
+        "torch==2.9.1+cpu",
         "--extra-index-url", "https://download.pytorch.org/whl/cpu",
         "-q"
     ])
@@ -17,7 +17,7 @@ try:
 except ImportError:
     subprocess.check_call([
         sys.executable, "-m", "pip", "install",
-        "torchvision==0.16.0+cpu",
+        "torchvision==0.24.1+cpu",
         "--extra-index-url", "https://download.pytorch.org/whl/cpu",
         "-q"
     ])
