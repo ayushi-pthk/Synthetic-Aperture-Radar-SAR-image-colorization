@@ -1,20 +1,26 @@
 import subprocess
 import sys
-import os
-
-def install(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package, "-q"])
 
 try:
     import torch
 except ImportError:
-    install("torch==2.1.0+cpu --extra-index-url https://download.pytorch.org/whl/cpu")
+    subprocess.check_call([
+        sys.executable, "-m", "pip", "install",
+        "torch==2.1.0+cpu",
+        "--extra-index-url", "https://download.pytorch.org/whl/cpu",
+        "-q"
+    ])
     import torch
 
 try:
     import torchvision
 except ImportError:
-    install("torchvision==0.16.0+cpu --extra-index-url https://download.pytorch.org/whl/cpu")
+    subprocess.check_call([
+        sys.executable, "-m", "pip", "install",
+        "torchvision==0.16.0+cpu",
+        "--extra-index-url", "https://download.pytorch.org/whl/cpu",
+        "-q"
+    ])
     import torchvision
 import streamlit as st
 import torch
