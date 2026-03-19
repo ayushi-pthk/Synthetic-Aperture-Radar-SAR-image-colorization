@@ -1,27 +1,4 @@
-import subprocess
-import sys
 
-try:
-    import torch
-except ImportError:
-    subprocess.check_call([
-        sys.executable, "-m", "pip", "install",
-        "torch==2.9.1+cpu",
-        "--extra-index-url", "https://download.pytorch.org/whl/cpu",
-        "--user", "-q"
-    ])
-    import torch
-
-try:
-    import torchvision
-except ImportError:
-    subprocess.check_call([
-        sys.executable, "-m", "pip", "install",
-        "torchvision==0.24.1+cpu",
-        "--extra-index-url", "https://download.pytorch.org/whl/cpu",
-        "--user", "-q"
-    ])
-    import torchvision
 import streamlit as st
 import torch
 from PIL import Image
