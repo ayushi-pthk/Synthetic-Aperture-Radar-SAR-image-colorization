@@ -7,6 +7,9 @@ from skimage.metrics import structural_similarity as ssim
 from skimage.metrics import peak_signal_noise_ratio as psnr
 import numpy as np
 import io
+import gdown
+gdown.download("your_drive_link", "encoder.pth")
+gdown.download("your_drive_link", "decoder.pth")
  
 from model import EnsembleEncoder, Decoder
  
