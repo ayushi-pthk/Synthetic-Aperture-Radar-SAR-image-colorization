@@ -1,8 +1,7 @@
 streamlit
-numpy
+numpy==1.26.4
 Pillow
 scikit-image
-streamlit==1.55.0
 torch==2.2.2
 torchvision==0.17.2
 gdown
