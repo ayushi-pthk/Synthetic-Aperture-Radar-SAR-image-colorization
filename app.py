@@ -109,8 +109,16 @@ encoder, decoder, device = load_models()
  
 # ── Helpers ───────────────────────────────────────────────────────────────────
 def preprocess_sar(img_pil):
-    t = T.Compose([T.Resize((224, 224)), T.ToTensor(), T.Normalize((0.5,), (0.5,))])
-    return t(img_pil).unsqueeze(0).repeat(1, 3, 1, 1).to(device)
+
+    img_pil = img_pil.convert("RGB")   # ensure 3 channels
+
+    t = T.Compose([
+        T.Resize((224, 224)),
+        T.ToTensor(),
+        T.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
+    ])
+
+    return t(img_pil).unsqueeze(0).to(device)
  
 def run_inference(tensor):
     with torch.no_grad():
