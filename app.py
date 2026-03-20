@@ -35,7 +35,7 @@ def download_models():
 download_models()
 
 # ── Page config ───────────────────────────────────────────────────────────────
-st.set_page_config(page_title="ColorSAR", page_icon="🛰️", layout="wide")
+st.set_page_config(page_title="SAR -> Color", page_icon="🛰️", layout="wide")
  
 # ── Custom CSS ────────────────────────────────────────────────────────────────
 st.markdown("""
